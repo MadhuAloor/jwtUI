@@ -1,0 +1,60 @@
+<style>
+    input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    
+    input[type=text]:focus {
+        width: 90%;
+    }
+</style>
+<div style="margin-top:54px;margin-left:54px;font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;">
+    <h4>Search for location :</h3>
+        <input type="text" gm-places-autocomplete ng-model="autocomplete" name="search" style="display:inline-block;min-width:250px"
+        />
+
+        <h3 ng-if="latn !=undefined">Results:</h3>
+        <div ng-if="lat !=undefined" style="margin-top:40px"><b>Lat:</b> {{ lat }}</div>
+        <div ng-if="lng != undefined" style="margin-top:10px"><b>Lng:</b> {{ lng }}</div>
+        <div ng-if="name != undefined" style="margin-top:10px"><b>place:</b> {{ name }}</div>
+        <br>
+        <br>
+        <p>
+        <a ng-click="getLocationData()" style="font-size:19px;"> Get your location Detail </a>
+        <span>
+          <p ng-show="showlocation" style="margin-left: 200px;
+    margin-top: -42px;
+    height: 38px;">
+        <a ng-click="minimize()" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-minus"></span>
+        </a>
+      </p>  
+      </span>
+     </p> 
+        <table ng-show="showlocation" class="table table-inverse">
+  <thead>
+    <tr>
+      <th>place</th>
+      <th>longitude</th>
+      <th>lattitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in allLocationData">
+      <td>{{item.place}}</td>
+      <td>{{item.longtitude}}</td>
+      <td>{{item.lattitude}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

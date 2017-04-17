@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+
+  <!--AngularJS-->
+  <script data-require="angularjs@1.5.8" data-semver="1.5.8" src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+  <script data-require="angular-route@1.5.8" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
+</head>
+
+<body ng-app="Productportfolio">
+
+  <!--<ul>
+    <li>
+      <a ng-href="#home">Home</a>
+    </li>
+    <li>
+      <a ng-href="#login">login</a>
+    </li>
+  </ul>-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" ng-disable="true">JWT  Demo</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ng-hide="loggedIn"><a href="#register">register</a></li>
+        <li ng-hide="loggedIn"><a href="#login">login</a></li>
+        <li ng-show="loggedIn"><a href="#profile">profile</a></li>
+        <li ng-show="loggedIn"><a href="#logout">logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <ng-view></ng-view>
+
+  <!--own js -->
+  <script src="app.js"></script>
+</body>
+
+</html>
