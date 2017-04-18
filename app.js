@@ -93,7 +93,8 @@ myApp
                 url: 'http://localhost:8080/api/getlocation',
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
-                    "x-access-token": localStorage.getItem('token')
+                    "x-access-token": localStorage.getItem('token'),
+                    "username":localStorage.getItem('username')
                 }
             })
                 .then(function successCallback(response) {
@@ -125,7 +126,7 @@ myApp
             $http({
                 method: 'POST',
                 url: 'http://localhost:8080/api/location',
-                data: 'longtitude=' + $scope.lng + '&lattitude=' + $scope.lat + '&place=' + $scope.name,
+                data: 'longtitude=' + $scope.lng + '&lattitude=' + $scope.lat + '&place=' + $scope.name + '&username=' +  localStorage.getItem('username'),
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
                     "x-access-token": localStorage.getItem('token')
@@ -152,7 +153,7 @@ myApp
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                     console.log(response);
-                    alert('login failed try again');
+                    alert('location update failed try again');
                 });
 
             $scope.$apply();
